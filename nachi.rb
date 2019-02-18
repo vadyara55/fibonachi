@@ -1,7 +1,7 @@
 fib = [0, 1]
-fibo = fib[-1] + fib[-2]
-loop do fibo
-  break if fibo >= 100
-  fib << fibo
+loop do
+  next_number = fib[-1] + fib[-2]
+  break if next_number >= 100
+  fib << next_number
 end
-print fibo
+print fib
