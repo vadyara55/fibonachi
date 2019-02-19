@@ -4,11 +4,22 @@ print "Введите месяц"
 month = gets.to_i
 print "Введите год"
 year = gets.to_i
-months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+months = {
+  1 => 31,
+  2 => 28,
+  3 => 31,
+  4 => 30,
+  5 => 31,
+  6 => 30,
+  7 => 31,
+  8 => 31,
+  9 => 30,
+  10 => 31,
+  11 => 30,
+  12 => 31}
 #определение високосного года
-months[1] = 29
-if year % 4 == 0 && year % 100 != 0 or year % 400 == 0
-  sum = 0
-  months[0..month-1].each { |mn| sum += mn }
+sum = 0
+months[1] = 29 if year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+  months.each {|mn, days| sum += days if mn < month  }
+  sum += day
   puts sum
-end
