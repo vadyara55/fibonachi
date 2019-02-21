@@ -4,4 +4,5 @@ loop do
   break if next_number >= 100
   fib << next_number
 end
+
 print fib

@@ -16,4 +16,5 @@ cart.each do |names, hash|
   puts "#{names} - цена: #{hash[:price]}  количество: #{hash[:count]} итого: #{hash[:summ]} "
 sum += hash[:summ]
 end
+
 puts "Сумма покупок #{sum}"
