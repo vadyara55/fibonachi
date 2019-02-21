@@ -9,9 +9,11 @@ loop do
   print "Количество: "
   count = gets.chomp.to_f
 
-  cart[name] = { "price" => price, "count" => count }
-  puts cart
+  cart[name] = { price: price, count: count, summ: price * count }
 end
 
-cart.each {|names, hash| sum += hash["price"] * hash["count"]}
+cart.each do |names, hash|
+  puts "#{names} - цена: #{hash[:price]}  количество: #{hash[:count]} итого: #{hash[:summ]} "
+sum += hash[:summ]
+end
 puts "Сумма покупок #{sum}"
